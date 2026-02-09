@@ -104,6 +104,9 @@ function Get-GroupFromPath {
     if ($p -match "\\repositories\\") { return "Repositories" }
     if ($p -match "\\wwwroot\\") { return "Web Assets" }
     if ($p -match "\\docs\\") { return "Docs" }
+    if ($p -match "\.md$") { return "Docs" }
+    if ($p -match "\.txt$") { return "Docs" }
+    if ($p -match "\\exceptions\\") { return "Exceptions" }
     if ($p -match "controller\.cs$") { return "Controllers" }
     if ($p -match "\.cshtml$" -or $p -match "\.cshtml\.cs$") { return "Razor Pages" }
     return "Other"
